@@ -121,6 +121,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  project: "js-data-firebase",
 	  name: "firebase",
 	  "class": "DSFirebaseAdapter"
+	}, {
+	  project: "js-data-sql",
+	  name: "sql",
+	  "class": "DSSqlAdapter"
 	}];
 
 	var functionsToWrap = ["compute", "digest", "eject", "inject", "link", "linkAll", "linkInverse", "unlinkInverse"];
@@ -267,6 +271,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          if (adapters[j].loaded && !adapters[j].registered) {
 	            adapters[j].registered = true;
 	            store.registerAdapter(adapters[j].name, args[i]);
+	            break;
 	          }
 	        }
 	      }
